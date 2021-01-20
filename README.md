@@ -1,117 +1,121 @@
-# College Tests Outcomes across Geographically Areas in California
+# Standardized Tests Performance in California Schools - Exploratory Analysis
 
-# Table of Contents
+## Table of Contents
 
+* [Background](#background)
 * [Problem Statement](#problem-statement)
-  * [Questions](#questions)
-* [Datasets](#datasets)
-  * [Data Dictionary](#data-dictionary)
-    * [ACT Dataset](#act-dataset)
-    * [SAT Dataset](#sat-dataset)
-* [Findings](#findings)
-* [Key Takeaways](#key-takeaways)
-* [Recommendations](#recommendations)
+* [Methodology](#methodology)
+    * [Data Collection](#data-collection)
+    * [Data Cleaning](#data-cleaning)
+    * [Data Engineering](#data-engineering)
+* [Data Analysis and Findings](#data-analysis-and-findings)
+* [Conclusions](#conclusions)
+* [Sources](#sources)
 
-# Problem Statement
-Quantify the overall college test performance and participation for 12th graders in rural, suburban, and urban areas in California
+---
 
-## Questions
-Which counties have SAT or ACT scores that are below the national average?
-Is there a difference between English vs Math?
-What is the student participation rate in ACT and SAT tests?
+## Background
+The SAT and ACT are standardized tests that measures a student's aptitude in
+areas like verbal, math, science and writing skills. Many colleges and
+universities use the student's test scores to assess the readiness for college
+and to make admission decisions.
 
-# Datasets
+The California Department of Education has published data related to SAT and ACT
+performance across schools in the state. This information is useful to analyze
+postsecondary preparation and identify trends that can inform the allocation of
+resources appropriately.
+
+## Problem Statement
+To analyze standardized test performance in California high schools
+for 2018-2019. The following questions were explored:
+- What are the counties with the lowest and highest SAT and ACT
+- Is there a difference between the test scores for English, Math, Science and
+Writing?
+- How many students in high school signed up to take the SAT and ACT tests?
+- Which test, SAT or ACT, do most students sign up for?
+
+---
+
+## Methodology:
+
+## Data Collection
+
+Two datasets were used in this analysis. These included information for SAT and ACT scores for all counties in California. A summary of the data is shown below:
 
 * ACT Data for California 12th graders for 2019
 * [`act_2019_ca.csv`](./data/act_2019_ca.csv): 2019 ACT Scores in California by School ([source](https://www.cde.ca.gov/ds/sp/ai/) | [data dictionary](https://www.cde.ca.gov/ds/sp/ai/reclayoutact19.asp))
+
 * SAT Data for California 12th graders for 2019
 * [`sat_2019_ca.csv`](./data/sat_2019_ca.csv): 2019 SAT Scores in California by School ([source](https://www.cde.ca.gov/ds/sp/ai/) | [data dictionary](https://www.cde.ca.gov/ds/sp/ai/reclayoutsat19.asp))
-* 57 counties included in the analysis
-* 1646 schools included in the analysis
+* 25 columns and 2576 rows of data
+
+
+---
+
+## Data Cleaning
+* Removed column and rows without information
+* Investigated missing values:
+    - The missing values in column "SName" were expected because this field belongs to record type "S" for School, and there are 597 records for District and County which will not have an SName. In a similar way, the missing values in column "DName" are expected too because this field belongs to record type "D" for District, and there are 58 records for County which will not have a DName. Below is the breakdown of the record types in the dataset which coincide with the missing values seeing above.
+* Changed the data type for columns and identified and fix values within columns that were causing data type discrepancies.
+* Changed the names in the columns to make them more explanatory
+
+## Data Engineering
+* Created five new columns to combine the information for 11th and 12th graders to evaluate all students together.
+
+---
 
 
 
-## Data Dictionary
+## Data Analysis and Findings
 
-### ACT Dataset
+A data analysis was conducted using Python.
 
-|Feature|Type|Dataset|Description|
-|---|---|---|---|
-|code|object|ACT|The county, district, or school code|
-|county_code|object|ACT|The county code|
-|district_code|object|ACT|The district code|
-|school_code|object|ACT|The school code|  
-|record_type|object|ACT|The record type C=County, D=District, S=School, X=State|
-|school_name|object|ACT|The school name, N/A = County or District Level Record|
-|district_name|object|ACT|The district name, N/A = County or District Level Record|
-|county_name|object|ACT|The county name|
-|enrollment|int|ACT|Enrollment of grade 12|
-|test_takers|int|ACT|This is the number of ACT test takers|
-|avg_scr_read|int|ACT|Average ACT  Reading Score, an asterisk is displayed  for schools with 14 or fewer students taking the ACT in order to preserve the anonymity of the students. An N/A is displayed if there were no ACT test takers and the grade 12 enrollment is equal to or greater than 15|
-|avg_scr_eng|int|ACT|Average ACT  English Score, an asterisk is displayed  for schools with 14 or fewer students taking the ACT in order to preserve the anonymity of the students. An N/A is displayed if there were no ACT test takers and the grade 12 enrollment is equal to or greater than 15|
-|avg_scr_sci|int|ACT|Average ACT Science Score, an asterisk is displayed  for schools with 14 or fewer students taking the ACT in order to preserve the anonymity of the students. An N/A is displayed if there were no ACT test takers and the grade 12 enrollment is equal to or greater than 15|
-|avg_scr_math|int|ACT|Average ACT Math Score, an asterisk is displayed  for schools with 14 or fewer students taking the ACT in order to preserve the anonymity of the students. An N/A is displayed if there were no ACT test takers and the grade 12 enrollment is equal to or greater than 15|
-|tst_takers_scr>21|int|ACT|Number of Test Takers Whose ACT Composite Scores Are Greater or Equal to 21. An asterisk is displayed for schools with 14 or fewer students taking the ACT in order to preserve the anonymity of the students. An N/A is displayed if there were no ACT test takers and the grade 12 enrollment is equal to or greater than 15|
-|tst_takers%_scr>21|float|ACT|Percent of Test Takers Whose ACT Composite Scores Are Greater or Equal to 21.An asterisk is displayed for schools with 14 or fewer students taking the ACT in order to preserve the anonymity of the students. An N/A is displayed if there were no ACT test takers and the grade 12 enrollment is equal to or greater than 15.|
-|year|object|ACT|The ACT test administration year: 2018-19|
+There are 57 counties in this dataset
 
+There are 539 school districts in this dataset
 
-### SAT Dataset
-
-|Feature|Type|Dataset|Description|
-|---|---|---|---|
-|code|object|SAT|The county, district, or school code|
-|county_code|object|SAT|The county code|
-|district_code|object|SAT|The district code|
-|school_code|object|SAT|The school code|  
-|record_type|object|SAT|The record type C=County, D=District, S=School, X=State|
-|school_name|object|SAT|The school name, N/A = County or District Level Record|
-|district_name|object|SAT|The district name, N/A = County or District Level Record|
-|county_name|object|SAT|The county name|
-|12grade_enrollment|int|SAT|Enrollment of grade 12|
-|12grade_test_takers|int|SAT|This is the number of SAT test takers in 12th grade|
-|12graders_passing_ERW|int|SAT|The number meeting the Evidence-Based Reading & Writing (ERW) benchmark established by the College Board based on the New 2016 SAT test format as of March 2016 for Grade 12|
-|12graders%_passing_ERW|float|SAT|The percent of students meeting the Evidence-Based Reading & Writing (ERW) benchmark established by the College Board based on the New 2016 SAT test format as of March 2016 for Grade 12|
-|12graders_passing_Math|int|SAT|The number of students who met or exceeded the benchmark for the New SAT Math test format as of March 2016 for Grade 12|
-|12graders%_passing_Math|float|SAT|The percent of students who met or exceeded the benchmark for SAT Math test for Grade 12|
-|11grade_enrollment|int|SAT|Enrollment of grade 11|
-|11grade_test_takers|int|SAT|This is the number of SAT test takers in 11th grade|
-|11graders_passing_ERW|int|SAT|The number meeting the Evidence-Based Reading & Writing (ERW) benchmark established by the College Board based on the New 2016 SAT test format as of March 2016 for Grade 11|
-|11graders%_passing_ERW|float|SAT|The percent of students who met or exceeded the benchmark for Evidence-Based Reading & Writing (ERW) test for Grade 11.|
-|11graders_passing_Math|int|SAT|or the New SAT Math test format as of March 2016 for Grade 11.|
-|11graders%_passing_Math|float|SAT|The percent of students who met or exceeded the benchmark for SAT Math test for Grade 11.|
-|12graders_passing_both_tst|int|SAT|The total number of students who met the benchmark of both Evidence-Based Reading & Writing (ERW) and Math Grade 12.|
-|12graders%_passing_both_tst|float|SAT|The percent of students who met the benchmark of both Evidence-Based Reading & Writing (ERW) and Math Grade 12.|
-|11graders_passing_both_tst|int|SAT|The total number of students who met the benchmark of both Evidence-Based Reading & Writing (ERW) and Math Grade 11.|
-|11graders%_passing_both_tst|float|SAT|The percent of students who met the benchmark of both Evidence-Based Reading & Writing (ERW) and Math Grade 11.|
-|year|object|SAT|The SAT test administration year: 2018-19|
-
-# Findings
-
-A data analysis was conducted using Python. See data sets and complete analysis in College_Test_Outcomes_CA.ipynb attached and supporting CSV files.
+There are 1887 schools in this dataset
 
 The following were the findings from the EDA and Data Visualization:
 
-1. The average number of students in rural counties having a passing score in the SAT or ACT is considerably lower than the average number of students having a good score in urban and suburban counties.
-2. There is strong correlation in test scores for ACT across all test categories.
-3. There is a strong correlation for number of students who pass the SAT Engligh/Reading/Writing section and number of students who pass the SAT Math section
-4. For the SAT, the average number of students having a passing score is greater for English/Reading/Writing than Math.
-5. Student participation rate in ACT is less than 20%
-6. Student participation rate in SAT is less than 40%
-7. Student in rural areas have the lowest average of number of students passing the ACT test
-8. The distributions for number of students passing the English/Reading/Writing is different across rural, suburban, and urban counties.
-9. For English/Reading/Writing, rural counties have the lowest number of students with a passing score.
-10. For Math, rural counties also have the lowest number of students with a passing score
-11. The box plots show a slight higher number of students passing SAT ERW over Math tests.
-12. The data for number of students passing the SAT has outliers for urban, suburban, and rural areas, as well as for ERW and Math. These outliers represent a higher number of students passing the specific test section in comparison to the average number of students.
+The number of schools in each county:
+![](images/Fig1_schools_per_county.png)
+
+The number of students by county who signed up to take the SAT:
+![](images/Fig2_tst_takers_per_county.png)
+
+The number of test takers by county who met the SAT benchmark score:
+![](images/Fig3_meet_benchmark_county.png)
+
+The dataset for SAT contains information for students in the 11th grade and 12th grade:
+![](images/Fig4_total_tst_takers.png)
+
+A comparison of test takers in 11th grade vs 12th grade who met the SAT bechmark score:
+![](images/Fig5_11_vs_12_grader_scores.png)
+
+A comparison of math vs ERW tests test takers who met the SAT benchmark:
+![](images/Fig6_math_vs_erw_scores.png)
+
+The number of students by county who signed up to take the ACT:
+![](images/Fig7_act_test_takers_by_county.png)
+
+The number of test takers by county who met the ACT benchmark score:
+![](images/Fig8_act_meet_benchmark_county.png)
+
+The distribution of ACT scores for each county:
+![](images/Fig9_act_distribution_scores.png)
+
+A comparison of ACT test subjects by county:
+![](images/Fig10_act_subject_scores.png)
+
+A comparison of number of SAT vs ACT test takers:
+![](images/Fig11_act_vs_sat_tst_takers.png)
 
 
-# Key Takeaways
-1. The average number of students in rural counties having a good score in the SAT or ACT is considerably lower than the average number of students having a good score in urban and suburban counties.
-2. There is no much difference in the average of scores across the test categories in the ACT. For the SAT, the average number of students having a passing score is greater for English/Reading/Writing than Math.
-3. Student participation rate in ACT and SAT testing is the same across rural, suburban, and urban areas across California
+## Conclusions
+1. Test Takers in the 11th grade scored higher than the students in the 12th grade.
+2. For the ACT test, the Reading Test had slightly higher scores than the rest of the tests.
+3. More students signed up for the SAT than the ACT.
 
-# Recommendations
-1. The low test performance in rural counties is a red flag. Need to evaluate this further by analyzing the data of other school performance metrics for students (ideally across all grades) in rural counties and compare this with the data from suburban and urban school metrics.
-2. Analyze what factors can be affecting testing performance in rural counties such as school funding, school programs, and teacher qualifications.
-3. Investigate and determine the needs of students in rural counties interested in taking the ACT or SAT.
+## Sources:
+ * California Department of Education, https://www.cde.ca.gov/ds/sp/ai/whatissat.asp
