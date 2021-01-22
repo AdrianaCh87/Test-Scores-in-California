@@ -4,12 +4,11 @@
 
 * [Background](#background)
 * [Problem Statement](#problem-statement)
-* [Methodology](#methodology)
-    * [Data Collection](#data-collection)
-    * [Data Cleaning](#data-cleaning)
-    * [Data Engineering](#data-engineering)
+* [Data Collection](#data-collection)
+* [Data Cleaning](#data-cleaning)
+* [Data Engineering](#data-engineering)
 * [Tableau Visualization](#data-visualization)
-* [Data Analysis and Findings](#data-analysis-and-findings)
+* [Exploratory Data Analysis](#exploratory-data-analysis)
 * [Conclusions](#conclusions)
 * [Sources](#sources)
 
@@ -37,10 +36,6 @@ Writing?
 
 ---
 
-## Methodology:
-
-
-
 ## Data Collection
 
 Two datasets were used in this analysis. These included information for SAT and ACT scores for all counties in California. A summary of the data is shown below:
@@ -50,7 +45,7 @@ Two datasets were used in this analysis. These included information for SAT and 
 
 * SAT Data for California 12th graders for 2019
 * [`sat_2019_ca.csv`](./data/sat_2019_ca.csv): 2019 SAT Scores in California by School ([source](https://www.cde.ca.gov/ds/sp/ai/) | [data dictionary](https://www.cde.ca.gov/ds/sp/ai/reclayoutsat19.asp))
-* 25 columns and 2576 rows of data
+* There are 57 counties, 539 school districts and 1887 schools in the datasets
 
 
 ---
@@ -73,25 +68,26 @@ Two datasets were used in this analysis. These included information for SAT and 
 ---
 ## Tableau Visualization
 
+An interactive visualization was completed in Tableau to summarize the ACT and SAT performance data by county, school district and school.
 
+ACT Viz:
+<div class='tableauPlaceholder' id='viz1611279423363' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StandardizedTestPerformanceCA&#47;ACTPerformance&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='StandardizedTestPerformanceCA&#47;ACTPerformance' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StandardizedTestPerformanceCA&#47;ACTPerformance&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1611279423363');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.maxWidth='1150px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';vizElement.style.maxHeight='887px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.maxWidth='1150px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';vizElement.style.maxHeight='887px';} else { vizElement.style.width='100%';vizElement.style.height='1477px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
 
-<div class='tableauPlaceholder' id='viz1611279423363' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StandardizedTestPerformanceCA&#47;ACTPerformance&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='StandardizedTestPerformanceCA&#47;ACTPerformance' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StandardizedTestPerformanceCA&#47;ACTPerformance&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1611279423363');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.maxWidth='1150px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';vizElement.style.maxHeight='887px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.maxWidth='1150px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';vizElement.style.maxHeight='887px';} else { vizElement.style.width='100%';vizElement.style.height='1477px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</script>
 
 Explore this complete visualization in Tableau [here](https://public.tableau.com/views/StandardizedTestPerformanceCA/ACTPerformance?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
 
+<div class='tableauPlaceholder' id='viz1611295026883' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SA&#47;SATPerformanceCASchools&#47;SATPerformance&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='views&#47;SATPerformanceCASchools&#47;SATPerformance?:language=en&amp;:embed=y&amp;:display_count=y&amp;publish=yes' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SA&#47;SATPerformanceCASchools&#47;SATPerformance&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1611295026883');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<div class='tableauPlaceholder' id='viz1611295046421' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DB&#47;DBW9ZXSR6&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;DBW9ZXSR6' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DB&#47;DBW9ZXSR6&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1611295046421');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+Explore this complete visualization in Tableau [here](https://public.tableau.com/views/SATPerformanceCASchools/SATPerformance?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
+
 ---
 
-## Data Analysis and Findings
+## Exploratory Data Analysis
 
-A data analysis was conducted using Python.
-
-There are 57 counties in this dataset
-
-There are 539 school districts in this dataset
-
-There are 1887 schools in this dataset
-
-The following were the findings from the EDA and Data Visualization:
+The following are the findings from the EDA:
 
 The number of schools in each county:
 ![](images/Fig1_schools_per_county.png)
@@ -114,7 +110,7 @@ A comparison of math vs ERW tests test takers who met the SAT benchmark:
 The number of students by county who signed up to take the ACT:
 ![](images/Fig7_act_test_takers_by_county.png)
 
-The number of test takers by county who met the ACT benchmark score:
+The number of test takers by county who score at least 21, the average ACT score:
 ![](images/Fig8_act_meet_benchmark_county.png)
 
 The distribution of ACT scores for each county:
@@ -130,7 +126,7 @@ A comparison of number of SAT vs ACT test takers:
 ## Conclusions
 1. Test Takers in the 11th grade scored higher than the students in the 12th grade.
 2. For the ACT test, the Reading Test had slightly higher scores than the rest of the tests.
-3. More students signed up for the SAT than the ACT.
+3. More students signed up to take the SAT than the ACT exam.
 
 ## Sources:
  * California Department of Education, https://www.cde.ca.gov/ds/sp/ai/whatissat.asp
