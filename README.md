@@ -87,12 +87,9 @@ Explore this complete Tableau dashboard [here](https://public.tableau.com/views/
 SAT Dashboard:
 Explore this complete Tableau dashboard [here](https://public.tableau.com/views/SATPerformanceCASchools/SATPerformance?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
 
-<center>
-  <iframe src="https://public.tableau.com/views/SATPerformanceCASchools/SATPerformance?:embed=yes&:display_count=yes"></iframe>
-</center>        
 
 
-
+<iframe seamless frameborder="0" src="https://public.tableau.com/views/SATPerformanceCASchools/SATPerformance?:embed=yes&:display_count=yes&:showVizHome=no" width = '650' height = '450' scrolling='yes' ></iframe>    
 ---
 
 ## Exploratory Data Analysis
