@@ -17,12 +17,11 @@
 ## Background
 The SAT and ACT are standardized tests that measure a student's aptitude in
 areas like verbal, math, science and writing skills. Colleges and
-universities use these test scores to assess a student's readiness for college
-and to make admission decisions.
+universities use these test scores to assess a student's readiness for college as part of their admission process.
 
-The SAT exam is composed of two sections: Math and Evidence-Based Reading, and Writing.
+The SAT exam is composed of two sections: Math and Evidence-Based Reading, and Writing (ERW). The SAT scores range from 400 to 1600. The college and career readiness benchmark is 480 for Evidence-Based Reading and Writing and 530 for Math.
 
-The ACT is composed of four sections: English, Math, reading and science.
+The ACT is composed of four sections: English, Math, reading and science. The composite score is the average of the four test scores, rounded to the nearest whole number. The composite score and each of the section test scores range from 1 to 36.
 
 The California Department of Education has published data for SAT and ACT
 performance for all schools in the state. This information is useful to evaluate
@@ -79,30 +78,36 @@ The two datasets for SAT and ACT performance were downloaded from the California
 An interactive dashboard was created in Tableau to summarize both ACT and SAT data by county, school district and school.
 
 ACT Dashboard:
+Explore this complete visualization in Tableau [here](https://public.tableau.com/views/StandardizedTestPerformanceCA/ACTPerformance?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
 <div class='tableauPlaceholder' id='viz1611279423363' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StandardizedTestPerformanceCA&#47;ACTPerformance&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='StandardizedTestPerformanceCA&#47;ACTPerformance' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StandardizedTestPerformanceCA&#47;ACTPerformance&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                
 
-Explore this complete visualization in Tableau [here](https://public.tableau.com/views/StandardizedTestPerformanceCA/ACTPerformance?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
+--
+
 
 SAT Dashboard:
-
-<div class='tableauPlaceholder' id='viz1611295046421' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DB&#47;DBW9ZXSR6&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;DBW9ZXSR6' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DB&#47;DBW9ZXSR6&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                
-
 Explore this complete visualization in Tableau [here](https://public.tableau.com/views/SATPerformanceCASchools/SATPerformance?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
+
+<div class='tableauPlaceholder' id='viz1611595781491' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SA&#47;SATPerformanceCASchools&#47;SATPerformance&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='views&#47;SATPerformanceCASchools&#47;SATPerformance?:language=en&amp;:embed=y&amp;:display_count=y&amp;publish=yes' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SA&#47;SATPerformanceCASchools&#47;SATPerformance&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1611595781491');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>                
+
+
 
 ---
 
 ## Exploratory Data Analysis
 
-Using Python's Pandas, and Plotly libraries, the data for SAT and ACT was analyzed to evaluate the questions from the problem statement.
+Using Python's Pandas, and Plotly libraries, the data for SAT and ACT was analyzed to evaluate the following questions:
+
 
 **How many schools are in each county in California?**
+
 California is the second state with the most school districts in the United States. However, not all counties in California have the same amount of school districts. There are many large rural areas with few schools, and small urban areas with many schools. Figure 1 below shows the number of schools in each county. This information is useful to understand the student population in each county and the resources they may need.
 
-| ![](images/Fig1_schools_per_county.png) |
+| ![](images/Fig1_schools_per_county.png)|
 |:--:|
 | Figure 1. Number of Schools in each CA county |
 
 **The percent of 11th and 12th graders who signed to take the SAT**
+
 Participation in the SAT is good indicator of students plan after school. Figure 2 below shows for the students in the last two grades of high school, how many were interested in taking the SAT.
 
 | ![](images/Fig2_tst_takers_per_county.png) |
@@ -110,6 +115,7 @@ Participation in the SAT is good indicator of students plan after school. Figure
 | Figure 2. Number of Test Takers in each CA county |
 
 **The percent of test takers who met the SAT benchmark score**
+
 Performance in the SAT tests is a good indicator of how well prepared are students for college. Figure 3 shows a proportion of the test takers who met the benchmark score in the SAT.  
 
 | ![](images/Fig3_meet_benchmark_county.png) |
@@ -117,6 +123,7 @@ Performance in the SAT tests is a good indicator of how well prepared are studen
 | Figure 3. Percent of Test Takers meeting SAT benchmark |
 
 **The enrollment of 11th vs. 12th graders for the SAT**
+
 Figure 4 below shows that for all counties, more 11th graders signed up to take the SAT exam.
 
 | ![](images/Fig4_total_tst_takers.png) |
@@ -124,6 +131,7 @@ Figure 4 below shows that for all counties, more 11th graders signed up to take 
 | Figure 4. Total Number of 11th vs 12 graders enrolled in the SAT |
 
 **The performance of 11th vs. 12th grades who passed the SAT benchmark scores**
+
 Figure 5 below shows that more 11th graders passed the benchmark SAT score than 12th graders in most counties.
 
 | ![](images/Fig5_11_vs_12_grader_scores.png) |
@@ -131,6 +139,7 @@ Figure 5 below shows that more 11th graders passed the benchmark SAT score than 
 | Figure 5. Percent of 11th vs 12th graders meeting SAT benchmark per county|
 
 **Performance for ERW and Math tests**
+
 Figure 6 below shows a scatterplot of the number of students in 11th and 12th grade passing the SAT benchmark scores in ERW and Math. The figure shows a positive linear relationship which means that the students who passed one test, also passed the other one. However, it looks like for some schools, more students met the ERW benchmark than the Math benchmark.  
 
 | ![](images/Fig6_math_vs_erw_scores.png) |
@@ -138,6 +147,7 @@ Figure 6 below shows a scatterplot of the number of students in 11th and 12th gr
 | Figure 6. Number of Test Takers meeting the benchmark for ERW vs Math |
 
 **Performance outcomes for the ACT exam**
+
 Figure 7 shows the percent of students who had a composite score of at least 21. The average of the four ACT tests is 21.
 
 | ![](images/Fig7_act_meet_benchmark_county.png) |
@@ -145,6 +155,7 @@ Figure 7 shows the percent of students who had a composite score of at least 21.
 | Figure 7. Percent of Students by County getting a composite ACT score of at least 21 |
 
 **The distribution of ACT scores for each county**
+
 Figure 8 below shows the distribution of the ACT performance for all counties.
 
 | ![](images/Fig8_act_distribution_scores.png) |
@@ -152,6 +163,7 @@ Figure 8 below shows the distribution of the ACT performance for all counties.
 | Figure 8. Distribution of ACT Performance by County |
 
 **A comparison of ACT scores for Reading, English, Math, and Science**
+
 Figure 9 below shows that students scored higher in the Reading test than Math, Science and English across most counties.
 
 | ![](images/Fig9_act_subject_scores.png) |
@@ -159,7 +171,8 @@ Figure 9 below shows that students scored higher in the Reading test than Math, 
 | Figure 9. Average ACT scores for each subject by county |
 
 **Enrollment of SAT vs. ACT exams**
-Figure 10 below shows that the SAT is more popular among students.
+
+Figure 10 below shows that the SAT is more popular among students. For the school year of 2018-2019, more students in California enrolled in the SAT than in the ACT.
 
 | ![](images/Fig10_act_vs_sat_tst_takers.png) |
 |:--:|
@@ -172,4 +185,5 @@ Figure 10 below shows that the SAT is more popular among students.
 3. In general for all counties, more students signed up to take the SAT than the ACT exam.
 
 ## Sources:
- * California Department of Education, https://www.cde.ca.gov/ds/sp/ai/whatissat.asp
+ * California Department of Education, [source](https://www.cde.ca.gov/ds/sp/ai/whatissat.asp)
+ * SAT Results, [source](https://reports.collegeboard.org/archive/sat-suite-program-results/2018/class-2018-results#:~:text=The%20college%20and%20career%20readiness,%2D%20and%20four%2Dyear%20colleges)
